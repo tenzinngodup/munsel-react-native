@@ -8,18 +8,18 @@ class FooterView extends React.Component {
     return (
         <Footer>
         <FooterTab>
-          <Button badge vertical>
-            <Badge><Text>2</Text></Badge>
-            <Icon name="apps" />
-            <Text>Home</Text>
-          </Button>
-          <Button active badge vertical>
+        <Button active badge vertical block onPress={() => this.props.navigation.navigate('Dicovery')}>
             <Badge ><Text>51</Text></Badge>
             <Icon active name="navigate" />
             <Text>Discover</Text>
           </Button>
+          <Button badge vertical block onPress={() => this.props.navigation.navigate('Session')}>
+            <Badge><Text>2</Text></Badge>
+            <Icon name="apps" />
+            <Text>History</Text>
+          </Button>
           <Button vertical>
-            <Icon name="person" />
+            <Icon name="person" block onPress={() => this.props.navigation.navigate('Profile')}/>
             <Text>Account</Text>
           </Button>
         </FooterTab>

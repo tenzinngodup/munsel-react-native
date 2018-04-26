@@ -7,15 +7,26 @@ import Tab1 from './tabOne';
 import Tab2 from './tabTwo';
 import LoginScreen from './login';
 import DicoveryScreen from './landing';
-import SessionScreen from './sessionOne';
+// import SessionScreen from './sessionOne';
 import OptionsScreen from './options';
 import ProfileScreen from './profile';
+import SessionScreen from './Session';
+
+
+import SplashScreen from 'react-native-splash-screen'
 
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
 
 class HomeScreen extends React.Component {
+
+  componentDidMount() {
+    // do stuff while splash screen is shown
+      // After having done stuff (such as async tasks) hide the splash screen
+      SplashScreen.hide();
+  }
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -61,11 +72,12 @@ const RootStack = StackNavigator(
     Session: { screen: SessionScreen },
     Options: { screen: OptionsScreen },
     Profile: { screen: ProfileScreen },
+    Session: { screen: SessionScreen }
 
   },
   {
 
-    initialRouteName: 'Login',
+    initialRouteName: 'Session',
         /* The header config from HomeScreen is now here */
         navigationOptions: {
           headerLeft: null

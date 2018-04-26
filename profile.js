@@ -36,7 +36,7 @@ export default class HelloWorldApp extends Component {
             </CardItem>
             <CardItem>
               <Left>
-                <Button block onPress={() => this.props.navigation.navigate('Options')}>
+                <Button block onPress={() => this.props.navigation.navigate('Session')}>
               <Text>Connect</Text>
             </Button>
               </Left>
